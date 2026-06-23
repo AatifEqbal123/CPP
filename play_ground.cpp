@@ -24,5 +24,19 @@ int main () {
 	cout<<message<<endl;
 	cout<<*message<<endl;
 	
+	// Ascii value tests
+		/*string a = "hello";
+	char i = static_cast<char>(a[0]);
+	string j;
+	/*int  i = static_cast<int>(a[0]);
+	string j = to_string(i);
+	
+	cout<<j<<endl;
+	int rough = 
+	string ans = static_cast<int>(rough);*/
+	
+	/*string name = "Aatif";
+	cout<<*/
+	
 	
 }

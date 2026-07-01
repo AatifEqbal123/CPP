@@ -3,7 +3,7 @@
 
 using namespace std;
 
-int ascii_calc(string a) {
+double ascii_calc(string a) {
 	double ans;
 	string rough;
 	int length = a.length();

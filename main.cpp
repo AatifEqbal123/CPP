@@ -11,9 +11,10 @@ int ascii_calc(string a) {
 		int value = static_cast<int>(a[i]);
 		string toAdd = to_string(value);
 		rough+=toAdd;
-		
+		cout<<rough<<endl;
 	}
 	ans = stod(rough);
+	return ans;
 }
 
 

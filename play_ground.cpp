@@ -38,5 +38,8 @@ int main () {
 	/*string name = "Aatif";
 	cout<<*/
 	
+	string rough = "6597116105102";
+	double ans = stod(rough);
+	cout<<ans<<endl;
 	
 }

@@ -38,8 +38,24 @@ int main () {
 	/*string name = "Aatif";
 	cout<<*/
 	
-	string rough = "6597116105102";
+	/* string rough = "6597116105102";
 	double ans = stod(rough);
-	cout<<ans<<endl;
+	cout<<ans<<endl; */
 	
+	
+	//ASCII
+	
+	
+/*	cout<<"working with ascii values"<<endl;
+	cout<<int('A')<<endl;
+	char ch = '"A"';
+	cout<<"Aa"+1<<endl; */
+	//cout<<int("'A'")<<endl;
+	//cout<<int('"A"')endl;
+	//cout<<(int)str
+	
+	int age;
+	cin>>age;
+	cout<<"your age is : "<<age;
+	cout<<(double)5/2<<endl;
 }

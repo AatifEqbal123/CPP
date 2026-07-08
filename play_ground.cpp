@@ -1,4 +1,5 @@
 #include <iostream>
+#include <typeinfo>
 
 using namespace std;
 int main () {
@@ -54,8 +55,22 @@ int main () {
 	//cout<<int('"A"')endl;
 	//cout<<(int)str
 	
-	int age;
+	/* int age;
 	cin>>age;
 	cout<<"your age is : "<<age;
-	cout<<(double)5/2<<endl;
+	cout<<(double)5/2<<endl; */
+	/*double x = 2.4;
+	if(typeid(x/2).name() == "double") {
+	    cout<<"s"<<endl;
+	}*/
+	/*cout<<typeid(typeid(x/2).name())<<endl;*/
+	
+	/*string y;
+	cin>>y;
+	x = int(y);
+	if(y.contains)*/
+	
+	cout<<(0.0>0)<<endl;
+	cout<<(0.0<0)<<endl;
+	cout<<(0.0 == 0)<<endl;
 }

@@ -20,6 +20,35 @@ double ascii_calc(string a)
     return ans;
 }
 
+
+string check(int a) {
+    string res;
+    if(a%2 == 0) {
+        res = "even ";
+    } else if (a%2 != 0) {
+        res = "odd ";
+    } else {
+        res = "it's 0";
+    }
+    
+    if(a>0) {
+        res.append("positive");
+    } else if (a<0) {
+        res.append("negative");
+    } 
+    
+    return res;
+}
+
+string parity(float a) {
+    string res = "negative";
+    if(a>0) {
+        res = "positive";
+    } else if (a == 0) {
+        res = "it's 0";
+    }
+}
+        
 int main()
 {
     // Data types
@@ -61,16 +90,46 @@ int main()
         cout << "The character is  neither upper case nor lowercase, it might be a special character" << endl;
     }
 
-    //even or odd
-    string y;
+    //even or odd positive or not ?
+    string y; // string for checking decimals
     cout<<"please enter a number to start ";    cin>>y;
-    int x = stoi(y);
+    int x = stoi(y); //int variable
+    bool isScam; // check for values like 0.00, 1.000, 1.00
+    
+    // Decimal check
     
     if(y.find('.') != string::npos) {
-        cout<<"it's a decimal value can't be categorised as even or odd"<<endl;
-        if(x>0) {
+        cout<<"decimal detected"<<endl;
+        //isScam check ex.[0.0, 1.000, 2.0]
+        for(auto it = y.rbegin(); it != y.rend(); ++it) {
+            if(*it == '.') {
+                break;
+            } else {
+                isScam = (*it == '0');
+                if(isScam == false) {
+                    [&]() {
+                        float temp = stof(y);
+                        cout<<"decimal value, neitger even nor odd, "<<parity(temp)<<endl;
+                    return;
+                    }();
+                }
+            }
+            
+        }
+        
+        if(isScam == true) {
+            [&]() {
+                int temp = stoi(y);
+                cout<<"actual value for your decimal : "<<temp<<" so results are,"<<endl;
+                cout<<check(temp);
+                return;
+            }();
+             //used function only one time for simplicity ither code follows if else ladder as commanded in paractice problem
+        } else if(x>0) {
+            cout<<"it's a decimal value can't be categorised as even or odd"<<endl;
             cout<<"positive"<<endl;
         } else if (x<0) {
+            cout<<"it's a decimal value can't be categorised as even or odd"<<endl;
             cout<<"negative";
         } else {
             cout<<"it's 0";
@@ -91,4 +150,5 @@ int main()
         cout<<"it's 0 and even"<<endl;
     }
     
-}
+} // Done 
+

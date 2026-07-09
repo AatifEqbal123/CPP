@@ -70,7 +70,12 @@ int main () {
 	x = int(y);
 	if(y.contains)*/
 	
+	string a = "Aatif";
+	string n = "2.2";
+	cout<<a[0]<<endl;
 	cout<<(0.0>0)<<endl;
 	cout<<(0.0<0)<<endl;
 	cout<<(0.0 == 0)<<endl;
+	cout<<stoi(n);
+	
 }

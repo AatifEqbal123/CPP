@@ -150,5 +150,7 @@ int main()
         cout<<"it's 0 and even"<<endl;
     }
     
+    
+    return 0;
 } // Done 
 

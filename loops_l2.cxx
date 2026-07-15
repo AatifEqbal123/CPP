@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <array>
 
 using namespace std;
 
@@ -55,6 +56,23 @@ int main() {
     }
     
     cout<<n<<" 's factorial "<<result<<endl;
+    
+    // Fibonacci series
+    int input;
+    cout<<"enter fibonacci series' n";
+    cin>>input;
+    array<int, 2> lasts = {};    
+    
+    for(int i = 0; i <= input; i++) {
+             if(i == 1) {
+                 lasts.back() = 0;
+                 lasts.front() = 1;
+                 }            
+             int printable = lasts[0] + lasts[1];
+             lasts.back() = lasts[0];
+             lasts.front() = printable;
+             cout<<printable<<endl;                   
+    }
     
     
     return 0;

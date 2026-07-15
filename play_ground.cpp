@@ -1,6 +1,6 @@
 #include <iostream>
 #include <typeinfo>
-
+#include <array>
 using namespace std;
 int main () {
 	   /* string a = "hello";
@@ -21,9 +21,9 @@ int main () {
 	
 	// why message printing is orintinh enture hello world
 	
-	const char* message = "Hello world";
+/*	const char* message = "Hello world";
 	cout<<message<<endl;
-	cout<<*message<<endl;
+	cout<<*message<<endl; */
 	
 	// Ascii value tests
 		/*string a = "hello";
@@ -77,10 +77,18 @@ int main () {
 	cout<<(0.0<0)<<endl;
 	cout<<(0.0 == 0)<<endl;
 	cout<<stoi(n);*/
-	
+	/*
 	cout<<"enter number ";
 	int x;
 	cin>>x;	
 	string n = (x>0) ? "positive" : "negative";
-	cout<<( x>0 ? "positive" : "negative")<<endl;
+	cout<<( x>0 ? "positive" : "negative")<<endl;*/
+	
+	int arr[2] = {};
+	int x = arr[0] + arr[1];
+	cout<<x;
+	int val = arr.back();
+	cout<<p<<endl;
+	
+	
 }

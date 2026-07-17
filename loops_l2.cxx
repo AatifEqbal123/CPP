@@ -82,7 +82,7 @@ int main()
             lasts.back() = 0;
             lasts.front() = 1;
             int printable = lasts.back() + lasts.front();
-            cout<<printable<<endl;
+            cout << printable << endl;
         }
         else
         {
@@ -93,5 +93,32 @@ int main()
         }
     }
 
-    return 0;
-}
+    // Prime number checker
+    int m;
+    cout << "enter number for prime validation ";
+    cin >> m;
+    bool isPrime;
+
+    for (int i = 1; i <= m; i++)
+    {
+        if (m == 1 or m == 0)
+        {
+            isPrime = false;
+            break;
+        }
+        else if (m % i == 0 and i > 1 and i < m)
+        {
+            isPrime = false;
+            break;
+        }
+        else
+        {
+            isPrime = true;
+        }
+    } 
+    cout<<isPrime;
+    
+    
+    
+        return 0;
+    }

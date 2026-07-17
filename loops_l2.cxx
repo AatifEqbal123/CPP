@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <array>
+#include <cmath>
 
 using namespace std;
 
@@ -97,28 +98,40 @@ int main()
     int m;
     cout << "enter number for prime validation ";
     cin >> m;
-    bool isPrime;
+    bool isPrime = true;
+    
+    if(m <=1) {
+        cout<<"nor prime neither composite";
+        } else {
+            int rootM = sqrt(m);
+        for(int i = 2; i<=rootM; i++) {
+                isPrime = (!(m%i == 0));
+                break;
+        }
+        }
+    cout << isPrime<<endl;
 
-    for (int i = 1; i <= m; i++)
+    // Fizz buzz
+    for (int i = 1; i <= 20; i++)
     {
-        if (m == 1 or m == 0)
+        if (i % 3 == 0 && i % 5 == 0)
         {
-            isPrime = false;
-            break;
+            cout << "Fizz Buzz" << endl;
         }
-        else if (m % i == 0 and i > 1 and i < m)
+        else if (i % 3 == 0)
         {
-            isPrime = false;
-            break;
+            cout << "Fizz" << endl;
         }
+        else if (i % 5 == 0)
+        {
+            cout << "Buzz" << endl;
+        }
+
         else
         {
-            isPrime = true;
+            cout << i << endl;
         }
-    } 
-    cout<<isPrime;
-    
-    
-    
-        return 0;
     }
+
+    return 0;
+}

@@ -84,11 +84,13 @@ int main () {
 	string n = (x>0) ? "positive" : "negative";
 	cout<<( x>0 ? "positive" : "negative")<<endl;*/
 	
-	int arr[2] = {};
-	int x = arr[0] + arr[1];
+//	int arr[2] = {};
+//	int x = arr[0] + arr[1];
+//	cout<<x;
+//	int val = arr.back();
+//	cout<<p<<endl;
+//	cout<<2/0;
+	float x = sqrt(12);
 	cout<<x;
-	int val = arr.back();
-	cout<<p<<endl;
-	
 	
 }

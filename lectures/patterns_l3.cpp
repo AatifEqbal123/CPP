@@ -27,7 +27,24 @@ int main() {
     }
     
     // inverse right triangle pattern
-       
     
+    for(int i = 1; i <= n; i++) {
+       for(int j = 5; j >= i; j--) {
+           cout<<"*";
+       }
+       cout<<""<<endl;
+    }
+    
+    cout<<"\n";
+    
+    // highest of the array
+    int arr[5] = {9,2,7,6,3};
+    int highest = 0;
+    for(int i : arr) {
+        if(i >= highest) {
+            highest = i;
+        } 
+    }
+    cout<<highest<<endl;
     return 0;
 }

@@ -14,10 +14,10 @@ int main () {
 	a = "changed";
 	cout<<a<<endl;*/
 	
-	int p = 0412;
-	int* pointer = &p;
-	cout<<pointer<<endl;
-	cout<<*pointer<<endl;
+//	int p = 0412;
+//	int* pointer = &p;
+//	cout<<pointer<<endl;
+//	cout<<*pointer<<endl;
 	
 	// why message printing is orintinh enture hello world
 	
@@ -90,7 +90,9 @@ int main () {
 //	int val = arr.back();
 //	cout<<p<<endl;
 //	cout<<2/0;
-	float x = sqrt(12);
-	cout<<x;
+//	float x = sqrt(12);
+//	cout<<x;
+	
+	cout<<2*'*';
 	
 }

@@ -1,6 +1,8 @@
 #include <iostream>
 #include <string>
 #include <algorithm>
+#include <functional>
+#include <cstring>
 
 using namespace std;
 
@@ -66,10 +68,24 @@ int main()
         }
     }
 
-        cout << highest << endl;
+        cout <<"linear search "<< highest << endl;
         cout << secondHigh << endl;
         
+        cout<<"\n";
         // through sorting
-   
+        
+        int arrCopy1[4];
+        memcpy(arrCopy1, arr, sizeof(arr));
+                
+        int a = sizeof(arr)/sizeof(arr[0]);
+        sort(arr, arr+a, greater<int>());
+        
+       cout<<"sorting "<<arr[0]<<endl;
+        cout<<arr[1]<<endl;
+        
+        
+        // through binary search
+        
+       
         return 0;
     }

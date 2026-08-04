@@ -2,6 +2,34 @@
 #include <typeinfo>
 #include <array>
 using namespace std;
+
+
+int factorial(int a) {
+    long long res = 1;
+    for(int i = 0; i<= a; i++) {
+        res*=i;
+    }
+    return res;
+}
+
+int getTwoIntsFactorial(int a, int b) {
+    int larger;
+    int smaller;
+    int Factorial = 1;
+    int bFactorial = 1;
+    if(a < b) {
+        larger = b;
+        smaller = a;
+    } else {
+        larger = a;
+        smaller = b;
+    } 
+    for(int i = 0; i<=larger; i++) {
+        if(i != smaller) {
+            
+    
+}
+
 int main () {
 	   /* string a = "hello";
 	string b = " world";
@@ -93,6 +121,9 @@ int main () {
 //	float x = sqrt(12);
 //	cout<<x;
 	
-	cout<<2*'*';
+	
 	
 }
+
+
+        

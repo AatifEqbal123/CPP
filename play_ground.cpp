@@ -12,22 +12,8 @@ int factorial(int a) {
     return res;
 }
 
-int getTwoIntsFactorial(int a, int b) {
-    int larger;
-    int smaller;
-    int Factorial = 1;
-    int bFactorial = 1;
-    if(a < b) {
-        larger = b;
-        smaller = a;
-    } else {
-        larger = a;
-        smaller = b;
-    } 
-    for(int i = 0; i<=larger; i++) {
-        if(i != smaller) {
-            
-    
+int getTwoIntsFactorial(int n, int c) {
+    pair<
 }
 
 int main () {

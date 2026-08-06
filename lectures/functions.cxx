@@ -6,11 +6,13 @@ using namespace std;
 
 void myfunction();
 
-int sumOfDigits(int a) {
+int sumOfDigits(int a)
+{
     int sum;
-    while(a != 0)  {
-        sum += (a%10);
-        a/=10;
+    while (a != 0)
+    {
+        sum += (a % 10);
+        a /= 10;
     }
     return sum;
 }
@@ -55,18 +57,80 @@ auto getTwoIntsFactorialPairs(int n, int c) {
     return facts;
 } */
 
+struct factorials
+{
+    string char;
+    long long factorial;
+}
 
-int main() {
-  // calling void one
-  myfunction();  
-  
-  // Taking input and calling for SumOfDigits
-  int input;
-  cout<<"enter number for sumOfDigits ";
-  cin>>input;
-  cout<<sumOfDigits(input)<<endl; 
-  
-  /* Pairs
+getTwoIntsFactorial(int n, int c)
+{
+    int larger;
+    int smaller;
+    int largeIncrementer;
+    int smallIncrementer;
+    factorials l1 = {'n', n};
+    factorials l2 = {'c', c};
+    if (n > c)
+    {
+        larger = n;
+        smaller = c;
+    }
+    else
+    {
+        larger = c;
+        smaller = n;
+    }
+
+    if (l1.factorial > l2.factorial)
+    {
+        largeIncrementer = "l1";
+        smallIncrementer = "l2";
+    }
+    else
+    {
+        largeIncrementer = "l2";
+        smallIncrementer = "l1";
+    }
+    for (int i = 1; i <= larger; i++)
+    {
+        {
+            if (smallIncrementer == "l1" and i <= l1.factorial)
+            {
+                l1.factorial *= i;
+            }
+            else if (smallIncrementer == "l2" and i <= l1.factorial)
+            {
+                l2.factorial *= i;
+            }
+        }
+        {
+            if (largeIncrementer == "l1")
+            {
+                l1.factorial *= i;
+            }
+            else
+            {
+                l2.factorial *= i;
+            }
+        }
+    }
+    
+    return 
+}
+
+int main()
+{
+    // calling void one
+    myfunction();
+
+    // Taking input and calling for SumOfDigits
+    int input;
+    cout << "enter number for sumOfDigits ";
+    cin >> input;
+    cout << sumOfDigits(input) << endl;
+
+    /* Pairs
   //Taking input and representing outout for getTwoIntsFactorialPairs
   
   int n;
@@ -80,14 +144,13 @@ int main() {
   
   cout<<facts.first.first<<": "<<facts.first.second<<endl;
   cout<<facts.second.first<<": "<<facts.second.second<<endl; */
-  
-  
-  
-  // returning 0
-  return 0;
+
+    // returning 0
+    return 0;
 }
 
-void myfunction() {
-    cout<<"definition later"<<endl;
+void myfunction()
+{
+    cout << "definition later" << endl;
     return;
 }

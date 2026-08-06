@@ -15,41 +15,75 @@ int sumOfDigits(int a) {
     return sum;
 }
 
-// Two numbers Factorial calculator with specifying which factorial belongs to which one using pairs
+/* Two numbers Factorial calculator with specifying which factorial belongs to which one using pairs
 
-auto getTwoIntsFactorial(int n, int c) {
+auto getTwoIntsFactorialPairs(int n, int c) {
+    // Declarartion of pairs and variables
     pair<pair<char, long long>, pair<char, long long>> facts;
     pair<char, long long>  largeFactorial;
     pair<char, long long>  smallFactorial;
     int smaller;
+    int larger;
     
+    // selecting smaller and bigger 
     if (n > c) {
-        largeFactorial = {'n', n};
-        smallFactorial = {'c', c};        
+        largeFactorial = {'n', n}; 
+        smallFactorial = {'c', c};
     } else {
         largeFactorial  = {'c', c};
         smallFactorial = {'n', n};
     }
-    smaller = smallFactorial.second;
+    smaller = smallFactorial.second; 
+    larger = largeFactorial.second; 
     
-    for(int i = 1; i<=largeFactorial.second; i++) {
-        if(i <= smaller) {
+    // initializing factorial second value to 1
+    largeFactorial.second = 1;
+    smallFactorial.second = 1;
+    
+    // looping through bigger
+    
+    for(int i = 1; i<=larger; i++) {
+        if(i <= smaller ) { 
             smallFactorial.second*=i;
         }
     largeFactorial.second*=i;
-    }  
-    facts = std::make_pair(largeFactorial, smallFactorial);  
+    }
+   
+        
+    //returning pairs    
+    facts = make_pair(largeFactorial, smallFactorial);  
     return facts;
-}
+} */
+
 
 int main() {
+  // calling void one
   myfunction();  
+  
+  // Taking input and calling for SumOfDigits
   int input;
   cout<<"enter number for sumOfDigits ";
   cin>>input;
-  cout<<sumOfDigits(input)<<endl;  
-  pair<pair<char, long long>, pair<char, long long>> facts  = getTwoIntsFactorial(4, 2);
-  cout<<facts.first.second<<endl;
+  cout<<sumOfDigits(input)<<endl; 
+  
+  /* Pairs
+  //Taking input and representing outout for getTwoIntsFactorialPairs
+  
+  int n;
+  int c;
+  cout<<"enter n ";
+  cin>>n;
+  cout<<"enter c ";
+  cin>>c;
+  // Calling and cout
+  pair<pair<char, long long>, pair<char, long long>> facts  = getTwoIntsFactorialPairs(n, c); 
+  
+  cout<<facts.first.first<<": "<<facts.first.second<<endl;
+  cout<<facts.second.first<<": "<<facts.second.second<<endl; */
+  
+  
+  
+  // returning 0
   return 0;
 }
 

@@ -57,70 +57,57 @@ auto getTwoIntsFactorialPairs(int n, int c) {
     return facts;
 } */
 
+// get two integer's factorial using structure istead of complicated pairs; much cleaner
+
+// creating structure of factorials lists
 struct factorials
 {
-    string char;
+    char name;
     long long factorial;
-}
+};
 
-getTwoIntsFactorial(int n, int c)
+// Function with tuple definition
+
+tuple<factorials, factorials> getTwoIntsFactorial(int n, int c)
 {
+    // Declaring variables
     int larger;
     int smaller;
-    int largeIncrementer;
-    int smallIncrementer;
-    factorials l1 = {'n', n};
-    factorials l2 = {'c', c};
+    factorials l1 = {};
+    factorials l2 = {};
+    
+    // Intialising variables after comparison
     if (n > c)
     {
         larger = n;
         smaller = c;
+        l1 = {'n', 1};
+        l2 = {'c', 1};
     }
     else
     {
         larger = c;
         smaller = n;
-    }
-
-    if (l1.factorial > l2.factorial)
-    {
-        largeIncrementer = "l1";
-        smallIncrementer = "l2";
-    }
-    else
-    {
-        largeIncrementer = "l2";
-        smallIncrementer = "l1";
-    }
-    for (int i = 1; i <= larger; i++)
-    {
-        {
-            if (smallIncrementer == "l1" and i <= l1.factorial)
-            {
-                l1.factorial *= i;
-            }
-            else if (smallIncrementer == "l2" and i <= l1.factorial)
-            {
-                l2.factorial *= i;
-            }
-        }
-        {
-            if (largeIncrementer == "l1")
-            {
-                l1.factorial *= i;
-            }
-            else
-            {
-                l2.factorial *= i;
-            }
-        }
+        l1 = {'c', 1};
+        l2 = {'n', 1};
     }
     
-    return 
+    // loop
+    for (int i = 1; i <= larger; i++)
+    {
+        if(i <= smaller) {
+            l2.factorial*=i;
+        }
+        l1.factorial*=i;        
+    }
+    
+    // return
+    return {l1, l2};
 }
 
 int main()
 {
+    
     // calling void one
     myfunction();
 
@@ -144,6 +131,23 @@ int main()
   
   cout<<facts.first.first<<": "<<facts.first.second<<endl;
   cout<<facts.second.first<<": "<<facts.second.second<<endl; */
+
+
+// calling getTwoIntsFactorial
+// input
+int n;
+int c;
+cout<<"enter n ";
+cin>>n;
+cout<<"enter c ";
+cin>>c;
+
+// retreiving
+auto[l1, l2] = getTwoIntsFactorial(n, c);
+cout<<l1.name<<": "<<l1.factorial<<endl;
+cout<<l2.name<<": "<<l2.factorial<<endl;
+
+
 
     // returning 0
     return 0;

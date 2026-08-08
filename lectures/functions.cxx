@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <utility>
+#include <tuple>
 
 using namespace std;
 
@@ -68,14 +69,15 @@ struct factorials
 
 // Function with tuple definition
 
-tuple<factorials, factorials> getTwoIntsFactorial(int n, int c)
+auto getTwoIntsFactorial(int n, int c)
 {
     // Declaring variables
     int larger;
     int smaller;
     factorials l1 = {};
     factorials l2 = {};
-    
+    factorials l3 = {};
+
     // Intialising variables after comparison
     if (n > c)
     {
@@ -83,6 +85,7 @@ tuple<factorials, factorials> getTwoIntsFactorial(int n, int c)
         smaller = c;
         l1 = {'n', 1};
         l2 = {'c', 1};
+        l3 = {'n-r', 1};
     }
     else
     {
@@ -90,24 +93,66 @@ tuple<factorials, factorials> getTwoIntsFactorial(int n, int c)
         smaller = n;
         l1 = {'c', 1};
         l2 = {'n', 1};
+        l3 = {'n-r', 1};
     }
-    
+
     // loop
     for (int i = 1; i <= larger; i++)
     {
-        if(i <= smaller) {
-            l2.factorial*=i;
+        if (i <= smaller)
+        {
+            l2.factorial *= i;
         }
-        l1.factorial*=i;        
+        l1.factorial *= i;
     }
-    
+
     // return
-    return {l1, l2};
+    tuple<factorials, factorials> factorials(l1, l2);
+    return factorials;
+}
+
+// getting  nCr through same logic but some optimization
+auto getNCR(int n, int r)
+{
+    // Declaring variables
+    int larger;
+    int smaller;
+    factorials l1 = {};
+    factorials l2 = {};
+
+    // Intialising variables after comparison
+    if (n > r)
+    {
+        larger = n;
+        smaller = r;
+        l1 = {'n', 1};
+        l2 = {'c', 1};
+    }
+    else
+    {
+        larger = r;
+        smaller = n;
+        l1 = {'c', 1};
+        l2 = {'n', 1};
+    }
+
+    // loop
+    for (int i = 1; i <= larger; i++)
+    {
+        if (i <= smaller)
+        {
+            l2.factorial *= i;
+        }
+        l1.factorial *= i;
+    }
+
+    // return
+    tuple<factorials, factorials> factorials(l1, l2);
+    return factorials;
 }
 
 int main()
 {
-    
     // calling void one
     myfunction();
 
@@ -132,22 +177,19 @@ int main()
   cout<<facts.first.first<<": "<<facts.first.second<<endl;
   cout<<facts.second.first<<": "<<facts.second.second<<endl; */
 
+    // calling getTwoIntsFactorial
+    // input
+    int n;
+    int r;
+    cout << "enter n ";
+    cin >> n;
+    cout << "enter r";
+    cin >> r;
 
-// calling getTwoIntsFactorial
-// input
-int n;
-int c;
-cout<<"enter n ";
-cin>>n;
-cout<<"enter c ";
-cin>>c;
-
-// retreiving
-auto[l1, l2] = getTwoIntsFactorial(n, c);
-cout<<l1.name<<": "<<l1.factorial<<endl;
-cout<<l2.name<<": "<<l2.factorial<<endl;
-
-
+    // retreiving
+    auto [l1, l2] = getTwoIntsFactorial(n, c);
+    cout << l1.name << ": " << l1.factorial << endl;
+    cout << l2.name << ": " << l2.factorial << endl;
 
     // returning 0
     return 0;

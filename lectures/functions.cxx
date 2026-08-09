@@ -84,8 +84,7 @@ auto getTwoIntsFactorial(int n, int c)
         larger = n;
         smaller = c;
         l1 = {'n', 1};
-        l2 = {'c', 1};
-        l3 = {'n-r', 1};
+        l2 = {'c', 1};        
     }
     else
     {
@@ -93,7 +92,6 @@ auto getTwoIntsFactorial(int n, int c)
         smaller = n;
         l1 = {'c', 1};
         l2 = {'n', 1};
-        l3 = {'n-r', 1};
     }
 
     // loop
@@ -103,6 +101,7 @@ auto getTwoIntsFactorial(int n, int c)
         {
             l2.factorial *= i;
         }
+        
         l1.factorial *= i;
     }
 
@@ -111,45 +110,6 @@ auto getTwoIntsFactorial(int n, int c)
     return factorials;
 }
 
-// getting  nCr through same logic but some optimization
-auto getNCR(int n, int r)
-{
-    // Declaring variables
-    int larger;
-    int smaller;
-    factorials l1 = {};
-    factorials l2 = {};
-
-    // Intialising variables after comparison
-    if (n > r)
-    {
-        larger = n;
-        smaller = r;
-        l1 = {'n', 1};
-        l2 = {'c', 1};
-    }
-    else
-    {
-        larger = r;
-        smaller = n;
-        l1 = {'c', 1};
-        l2 = {'n', 1};
-    }
-
-    // loop
-    for (int i = 1; i <= larger; i++)
-    {
-        if (i <= smaller)
-        {
-            l2.factorial *= i;
-        }
-        l1.factorial *= i;
-    }
-
-    // return
-    tuple<factorials, factorials> factorials(l1, l2);
-    return factorials;
-}
 
 int main()
 {
@@ -187,11 +147,13 @@ int main()
     cin >> r;
 
     // retreiving
+    
     auto [l1, l2] = getTwoIntsFactorial(n, c);
     cout << l1.name << ": " << l1.factorial << endl;
-    cout << l2.name << ": " << l2.factorial << endl;
+    cout << l2.name << ": " << l2.factorial << endl; 
 
     // returning 0
+    
     return 0;
 }
 
